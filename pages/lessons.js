@@ -1,4 +1,4 @@
-import { useState } from "react";
+// pages/lessons.js
 import Navbar from "../components/Navbar";
 import LessonCard from "../components/LessonCard";
 
