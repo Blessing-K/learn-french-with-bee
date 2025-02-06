@@ -2,17 +2,19 @@
 import { useState } from "react";
 
 export default function QuizCard({ question, correctAnswer }) {
-  const [answer, setAnswer] = useState("");
-  const [message, setMessage] = useState("");
+  const [answer, setAnswer] = useState(""); // State to track user input
+  const [message, setMessage] = useState(""); // State to store feedback message
 
+  // Event Handler: Checks the answer when the button is clicked
   const checkAnswer = () => {
     if (answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-      setMessage("✅ Correct!");
+      setMessage("✅ Correct!"); 
     } else {
       setMessage("❌ Try again.");
     }
   };
 
+  // Event Handler: Updates state when user types in the input field
   const handleInputChange = (e) => {
     setAnswer(e.target.value);
     setMessage(""); // Clear message when user types a new answer
@@ -27,7 +29,7 @@ export default function QuizCard({ question, correctAnswer }) {
         onChange={handleInputChange}
         placeholder="Type your answer..."
       />
-      <button onClick={checkAnswer}>Submit</button>
+      <button onClick={checkAnswer}>Submit</button> 
       <p>{message}</p>
     </div>
   );

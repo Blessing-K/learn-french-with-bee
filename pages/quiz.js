@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar";
 import QuizCard from "../components/QuizCard";
 
-export default function Quiz() {
+export default function Quiz() { // Quiz function containing array of quiz questions
   const quizQuestions = [
     { id: 1, question: 'What is "Bonjour" in English?', correctAnswer: "Hello" },
     { id: 2, question: 'How do you say "Thank you" in French?', correctAnswer: "Merci" },
@@ -12,9 +12,9 @@ export default function Quiz() {
   return (
     <div>
       <Navbar />
-      <h1>French Quiz</h1>
+      <h1>French Quiz</h1> {/* Passes question and correctAnswer as props to QuizCard */}
       {quizQuestions.map((q) => (
-        <QuizCard key={q.id} question={q.question} correctAnswer={q.correctAnswer} />
+        <QuizCard key={q.id} question={q.question} correctAnswer={q.correctAnswer} /> 
       ))}
     </div>
   );
