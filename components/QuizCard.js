@@ -1,7 +1,7 @@
 // components/QuizCard.js
 import { useState } from "react";
 
-export default function QuizCard({ question, correctAnswer }) {
+export default function QuizCard({ question, correctAnswer }) { // receives question and correctAnswer as props
   const [answer, setAnswer] = useState(""); // State to track user input
   const [message, setMessage] = useState(""); // State to store feedback message
 
@@ -29,7 +29,8 @@ export default function QuizCard({ question, correctAnswer }) {
         onChange={handleInputChange}
         placeholder="Type your answer..."
       />
-      <button onClick={checkAnswer}>Submit</button> 
+      <button onClick={checkAnswer}>Submit</button>
+      {/*  CONDITIONAL RENDERING: Show one of two messages when user submits an answer */}
       <p>{message}</p>
     </div>
   );

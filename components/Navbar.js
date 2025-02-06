@@ -2,20 +2,21 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // Managing theme state
+export default function Navbar({ initialTheme }) { // Receives initial theme as a prop
+  const [isDarkMode, setIsDarkMode] = useState(initialTheme); // manages theme state
 
-  // Event handler: function to toggle theme color when buton is clicked
+  // Event handler: function to toggle theme color when button is clicked
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode(!isDarkMode); 
   };
 
   return (
-    <nav style={{ backgroundColor: isDarkMode ? "black" : "white"}}> {/* Nav style changes based on isDarkMode state */}
+    <nav style={{ backgroundColor: isDarkMode ? "black" : "white" }}>
       <button onClick={toggleTheme}>
+        {/* CONDITIONAL RENDERING: Change button text based on dark mode state */}
         {isDarkMode ? "Light Mode" : "Dark Mode"}
       </button>
-      <ul>                                     {/* Links to navigate between pages */} 
+      <ul>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/lessons">Lessons</Link></li>
         <li><Link href="/quiz">Quiz</Link></li>

@@ -1,5 +1,4 @@
 // pages/lessons.js
-import Navbar from "../components/Navbar";
 import LessonCard from "../components/LessonCard";
 
 // Array of lessons to pass as props
@@ -12,7 +11,6 @@ const lessonsData = [
 export default function Lessons() {
   return (
     <div>
-      <Navbar />
       <h1>French Lessons</h1>  {/* Passing lesson as a prop to LessonCard */}
       {lessonsData.map((lesson) => (  
         <LessonCard key={lesson.id} lesson={lesson} />  

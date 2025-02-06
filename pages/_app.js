@@ -1,5 +1,12 @@
-import "@/styles/globals.css";
+import Navbar from "../components/Navbar";
+import "../styles/globals.css"; // Import global styles
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <div>
+      <Navbar initialTheme={false} /> {/* Pass initial theme as prop */}
+      <Component {...pageProps} /> {/* Renders the current page */}
+    </div>
+  );
 }
+
